@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, ScrollView } from 'react-native'
 
 import AppLoading from 'expo-app-loading'
 import {
@@ -11,7 +11,8 @@ import {
 } from '@expo-google-fonts/rajdhani'
 
 import themes from './src/global/theme'
-import Header from './src/components/Header/Header'
+import Header from './src/components/Header/'
+import Card from './src/components/Card'
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -24,10 +25,14 @@ export default function App() {
     return <AppLoading />
   } else {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <StatusBar style="auto" />
         <Header />
-      </View>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </ScrollView>
     )
   }
 }
@@ -35,13 +40,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: themes.colors.background,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  text: {
-    fontFamily: themes.fonts.titleFont,
-    fontSize: 32,
-    color: themes.colors.primary
+    backgroundColor: themes.colors.background
   }
 })

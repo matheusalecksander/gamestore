@@ -3,6 +3,7 @@ import themes from '../../global/theme'
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 25,
     padding: 20,
     width: '100%',
     borderBottomWidth: 2,
@@ -22,10 +23,11 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: themes.colors.secondary
   },
-  teste: {
-    height: '100%',
-    width: '100%',
-    backgroundColor: '#fff'
+  input: {
+    backgroundColor: '#fff',
+    width: '50%',
+    padding: 5,
+    borderRadius: 10
   }
 })
 
