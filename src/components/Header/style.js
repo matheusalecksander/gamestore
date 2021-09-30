@@ -6,8 +6,6 @@ const styles = StyleSheet.create({
     marginTop: 25,
     padding: 20,
     width: '100%',
-    borderBottomWidth: 2,
-    borderBottomColor: themes.colors.primary,
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',

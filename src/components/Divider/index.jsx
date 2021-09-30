@@ -10,6 +10,8 @@ export default function Divider() {
       <LinearGradient 
         colors={[themes.colors.primary, themes.colors.secondary]}
         style={styles.divider}
+        start={[0, 1]}
+        end={[1, 0]}
         />
   )
 }
