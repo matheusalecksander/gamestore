@@ -3,7 +3,6 @@ import themes from '../../global/theme'
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
     flexDirection: 'row',
     width: '100%',
     height: 175,
@@ -15,14 +14,14 @@ const styles = StyleSheet.create({
     height: 125
   },
   title: {
-    color: '#fff',
+    color: '#172022',
     lineHeight: 35,
     fontFamily: themes.fonts.titleFont,
     fontSize: 28,
     marginLeft: 10
   },
   text: {
-    color: '#fff',
+    color: '#172022',
     fontFamily: themes.fonts.textFont,
     marginLeft: 10
   }

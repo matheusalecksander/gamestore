@@ -4,7 +4,8 @@ import themes from '../../global/theme'
 const styles = StyleSheet.create({
   container: {
     marginTop: 25,
-    padding: 20,
+    paddingVertical: 15,
+    paddingHorizontal: 20,
     width: '100%',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -12,12 +13,11 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start'
   },
   logoPurple: {
-    fontFamily: themes.fonts.logoFont,
+    fontFamily: themes.fonts.titleFont,
     fontSize: 24,
     color: themes.colors.primary
   },
   logoGreen: {
-    fontFamily: themes.fonts.logoFont,
     fontSize: 24,
     color: themes.colors.secondary
   },
