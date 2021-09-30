@@ -9,16 +9,23 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: 'center'
   },
+  imageContainer: {
+    width: '35%',
+    height: 'auto',
+  },
   image: {
     width: 125,
     height: 125
   },
+  description: {
+    width: '65%',
+    height: 'auto',
+  },
   title: {
     color: '#172022',
-    lineHeight: 35,
     fontFamily: themes.fonts.titleFont,
     fontSize: 28,
-    marginLeft: 10
+    marginLeft: 10,
   },
   text: {
     color: '#172022',
