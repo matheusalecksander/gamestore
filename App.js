@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
 
 import AppLoading from 'expo-app-loading'
@@ -21,6 +21,12 @@ export default function App() {
     Rajdhani_700Bold
   })
 
+  const [games, setGames] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api').then((response) => response.json()).then(setGames)
+  }, [])
+
   if (!fontsLoaded) {
     return <AppLoading />
   } else {
@@ -28,12 +34,17 @@ export default function App() {
       <ScrollView style={styles.container}>
         <StatusBar style="auto" />
         <Header />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {games.map((item, i) => {
+          return (
+            <Card
+              key={i}
+              image={item.image}
+              name={item.name}
+              score={item.score}
+              price={item.price.toString().replace('.', ',')}
+             /> 
+          );
+        })};
       </ScrollView>
     )
   }
