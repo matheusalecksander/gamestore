@@ -9,7 +9,7 @@ export default function Card(props) {
   const navigation = useNavigation()
 
   function handleNavigation() {
-    navigation.navigate('Detalhes')
+    navigation.navigate('Carrinho')
   }
 
 

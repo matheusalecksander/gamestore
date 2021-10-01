@@ -4,7 +4,9 @@ import { StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from './src/pages/Home'
+import Home from './src/pages/Home/'
+import Detail from './src/pages/Detail/'
+import Cart from './src/pages/Cart/'
 
 import AppLoading from 'expo-app-loading'
 import {
@@ -15,7 +17,6 @@ import {
 } from '@expo-google-fonts/rajdhani'
 
 import themes from './src/global/theme'
-import Detail from './src/pages/Detail';
 
 const Stack = createNativeStackNavigator()
 
@@ -30,7 +31,7 @@ export default function App() {
     return <AppLoading />
   } else {
     return (
-      <NavigationContainer style={styles.container}>
+       <NavigationContainer style={styles.container}>
         <Stack.Navigator>
           <Stack.Screen 
             name="GameStore"
@@ -47,6 +48,18 @@ export default function App() {
           <Stack.Screen 
             name="Detalhes"
             component={Detail}
+            options={
+              {
+                headerTintColor: themes.colors.primary,
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
+                headerTitleAlign: 'center',
+            }}
+          />
+          <Stack.Screen 
+            name="Carrinho"
+            component={Cart}
             options={
               {
                 headerTintColor: themes.colors.primary,
