@@ -34,6 +34,14 @@ export default function App() {
           <Stack.Screen 
             name="GameStore"
             component={Home}
+            options={
+              {
+                headerTintColor: themes.colors.primary,
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
+                headerTitleAlign: 'center'
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
