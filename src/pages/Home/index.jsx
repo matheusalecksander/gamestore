@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
 
-import Header from '../../components/Header/'
+import SearchBar from '../../components/SearchBar/'
 import Card from '../../components/Card'
 
 import styles from './style'
@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <ScrollView style={styles.container}>
-      <Header />
+      <SearchBar />
       {
         games.map((item, i) => {
           return (

@@ -33,7 +33,7 @@ export default function App() {
       <NavigationContainer style={styles.container}>
         <Stack.Navigator>
           <Stack.Screen 
-            name="Home"
+            name="GameStore"
             component={Home}
             options={
               {
@@ -42,11 +42,10 @@ export default function App() {
                   fontWeight: 'bold',
                 },
                 headerTitleAlign: 'center',
-                headerShown: false
             }}
           />
           <Stack.Screen 
-            name="Detail"
+            name="Detalhes"
             component={Detail}
             options={
               {

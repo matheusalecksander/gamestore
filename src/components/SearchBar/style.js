@@ -3,7 +3,6 @@ import themes from '../../global/theme'
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
     paddingVertical: 15,
     paddingHorizontal: 20,
     width: '100%',
@@ -13,14 +12,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'flex-start',
   },
+  orderBy: {
+    width: '30%',
+    height: 'auto',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly'
+  },
   logoPurple: {
     fontFamily: themes.fonts.titleFont,
-    fontSize: 24,
+    fontSize: 18,
     color: themes.colors.primary
-  },
-  logoGreen: {
-    fontSize: 24,
-    color: themes.colors.secondary
   },
   input: {
     backgroundColor: '#fff',
