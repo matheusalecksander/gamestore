@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <ScrollView style={styles.container}>
-      {/*       <Header /> */}
+      <Header />
       {
         games.map((item, i) => {
           return (

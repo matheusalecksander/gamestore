@@ -1,11 +1,23 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+
 import Divider from '../Divider'
 import styles from './style'
 
 export default function Card(props) {
+  const navigation = useNavigation()
+
+  function handleNavigation() {
+    navigation.navigate('Detail')
+  }
+
+
   return (
-    <>
+    <TouchableOpacity
+      onPress={() => handleNavigation()}
+      activeOpacity={0.7}
+    >
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
@@ -20,6 +32,6 @@ export default function Card(props) {
         </View>
       </View>
       <Divider />
-    </>
+    </TouchableOpacity>
   )
 }

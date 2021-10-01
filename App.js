@@ -15,6 +15,7 @@ import {
 } from '@expo-google-fonts/rajdhani'
 
 import themes from './src/global/theme'
+import Detail from './src/pages/Detail';
 
 const Stack = createNativeStackNavigator()
 
@@ -32,7 +33,7 @@ export default function App() {
       <NavigationContainer style={styles.container}>
         <Stack.Navigator>
           <Stack.Screen 
-            name="GameStore"
+            name="Home"
             component={Home}
             options={
               {
@@ -40,7 +41,20 @@ export default function App() {
                 headerTitleStyle: {
                   fontWeight: 'bold',
                 },
-                headerTitleAlign: 'center'
+                headerTitleAlign: 'center',
+                headerShown: false
+            }}
+          />
+          <Stack.Screen 
+            name="Detail"
+            component={Detail}
+            options={
+              {
+                headerTintColor: themes.colors.primary,
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
+                headerTitleAlign: 'center',
             }}
           />
         </Stack.Navigator>

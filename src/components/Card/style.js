@@ -10,12 +10,13 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   imageContainer: {
-    width: '35%',
+    width: '36%',
     height: 'auto',
   },
   image: {
     width: 125,
-    height: 125
+    height: 125,
+    resizeMode: 'cover',
   },
   description: {
     width: '65%',
