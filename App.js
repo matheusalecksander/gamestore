@@ -1,6 +1,10 @@
 import { StatusBar } from 'expo-status-bar'
-import React, {useEffect, useState} from 'react'
-import { StyleSheet, ScrollView } from 'react-native'
+import React from 'react'
+import { StyleSheet } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import Home from './src/pages/Home'
 
 import AppLoading from 'expo-app-loading'
 import {
@@ -11,8 +15,8 @@ import {
 } from '@expo-google-fonts/rajdhani'
 
 import themes from './src/global/theme'
-import Header from './src/components/Header/'
-import Card from './src/components/Card'
+
+const Stack = createNativeStackNavigator()
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -21,31 +25,18 @@ export default function App() {
     Rajdhani_700Bold
   })
 
-  const [games, setGames] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:3000/api').then((response) => response.json()).then(setGames)
-  }, [])
-
   if (!fontsLoaded) {
     return <AppLoading />
   } else {
     return (
-      <ScrollView style={styles.container}>
-        <StatusBar style="auto" />
-        <Header />
-        {games.map((item, i) => {
-          return (
-            <Card
-              key={i}
-              image={item.image}
-              name={item.name}
-              score={item.score}
-              price={item.price.toString().replace('.', ',')}
-             /> 
-          );
-        })};
-      </ScrollView>
+      <NavigationContainer style={styles.container}>
+        <Stack.Navigator>
+          <Stack.Screen 
+            name="GameStore"
+            component={Home}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     )
   }
 }

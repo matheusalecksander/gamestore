@@ -9,7 +9,7 @@ export default function Card(props) {
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
-            source={require(`../../assets/${props.image}`)}
+            source={{ uri: `https://raw.githubusercontent.com/projetos-matheusalecksander/gamestore/main/src/assets/${props.image}` }}
             style={styles.image} />
         </View>
         <View style={styles.description}>
