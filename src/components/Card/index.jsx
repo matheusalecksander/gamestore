@@ -8,13 +8,13 @@ import styles from './style'
 export default function Card(props) {
   const navigation = useNavigation()
 
-  function handleNavigation() {
-    navigation.navigate('Detalhes')
+  function handleNavigation(item) {
+    navigation.navigate('Detalhes', { ...item })
   }
 
   return (
     <TouchableOpacity
-      onPress={() => handleNavigation()}
+      onPress={() => handleNavigation(props)}
       activeOpacity={0.7}
     >
       <View style={styles.container}>
