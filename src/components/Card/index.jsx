@@ -9,9 +9,8 @@ export default function Card(props) {
   const navigation = useNavigation()
 
   function handleNavigation() {
-    navigation.navigate('Carrinho')
+    navigation.navigate('Detalhes')
   }
-
 
   return (
     <TouchableOpacity
