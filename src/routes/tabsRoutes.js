@@ -1,6 +1,6 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons'
 
 import { View, StyleSheet, Text } from 'react-native'
 
@@ -13,53 +13,74 @@ const Tab = createBottomTabNavigator()
 function Tabs() {
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        showLabel: false,
-        style: {
-          backgroundColor: themes.colors.background,
-      },
-    }}
+      screenOptions={{
+        tabBarShowLabel: false,
+        tabBarStyle: [
+          {
+            display: 'flex'
+          },
+          null
+        ]
+      }}
     >
       <Tab.Screen
-       name="Home"
-       component={StackRoutes}
-       options={
-        {
+        name="Home"
+        component={StackRoutes}
+        options={{
           headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <View style={focused ? styles.iconContainerFocused : styles.iconContainer}>
+          tabBarIcon: ({ focused }) => (
+            <View
+              style={
+                focused ? styles.iconContainerFocused : styles.iconContainer
+              }
+            >
               <Ionicons
-               name="home-outline"
-               size={24}
-               color={focused ? themes.colors.secondary : themes.colors.primary}
-                />
-                <Text style={focused ? styles.labelTextFocused : styles.labelText}>HOME</Text>
+                name="home-outline"
+                size={24}
+                color={
+                  focused ? themes.colors.secondary : themes.colors.primary
+                }
+              />
+              <Text
+                style={focused ? styles.labelTextFocused : styles.labelText}
+              >
+                HOME
+              </Text>
             </View>
           )
-        }
-      }/>
-      <Tab.Screen 
+        }}
+      />
+      <Tab.Screen
         name="Carrinho"
-        component={Cart} 
-        options={
-            {
-              headerTintColor: themes.colors.primary,
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-              headerTitleAlign: 'center',
-              tabBarIcon: ({focused}) => (
-                <View style={focused ? styles.iconContainerFocused : styles.iconContainer}>
-                <Ionicons
-                  name="cart-outline"
-                  size={24}
-                  color={focused ? themes.colors.secondary : themes.colors.primary}
-                />
-                  <Text style={focused ? styles.labelTextFocused : styles.labelText}>CARRINHO</Text>
-              </View>
+        component={Cart}
+        options={{
+          headerTintColor: themes.colors.primary,
+          headerTitleStyle: {
+            fontWeight: 'bold'
+          },
+          headerTitleAlign: 'center',
+          tabBarIcon: ({ focused }) => (
+            <View
+              style={
+                focused ? styles.iconContainerFocused : styles.iconContainer
+              }
+            >
+              <Ionicons
+                name="cart-outline"
+                size={24}
+                color={
+                  focused ? themes.colors.secondary : themes.colors.primary
+                }
+              />
+              <Text
+                style={focused ? styles.labelTextFocused : styles.labelText}
+              >
+                CARRINHO
+              </Text>
+            </View>
           )
-            }
-        }/>
+        }}
+      />
     </Tab.Navigator>
   )
 }
@@ -96,4 +117,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Tabs;
+export default Tabs

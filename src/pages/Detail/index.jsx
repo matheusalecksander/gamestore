@@ -23,6 +23,10 @@ export default function Detail() {
     getGame()
   }, [])
 
+  function handleNavigation(item) {
+    navigation.navigate('Carrinho', { ...item })
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -44,6 +48,7 @@ export default function Detail() {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.7}
+        onPress={() => handleNavigation(game)}
       >
         <Text style={styles.buttonText}>ADICIONAR AO CARRINHO</Text>
       </TouchableOpacity>
