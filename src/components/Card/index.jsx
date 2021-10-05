@@ -8,7 +8,7 @@ export default function Card(props) {
     <>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
-          <Image
+        <Image
             source={require(`../../assets/${props.image}`)}
             style={styles.image} />
         </View>

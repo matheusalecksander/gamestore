@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
 
 import AppLoading from 'expo-app-loading'
@@ -21,11 +21,7 @@ export default function App() {
     Rajdhani_700Bold
   })
 
-  const [games, setGames] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:3000/api').then((response) => response.json()).then(setGames)
-  }, [])
+  const games = require('./src/api/products.json')
 
   if (!fontsLoaded) {
     return <AppLoading />
@@ -42,9 +38,9 @@ export default function App() {
               name={item.name}
               score={item.score}
               price={item.price.toString().replace('.', ',')}
-             /> 
-          );
-        })};
+            />
+          )
+        })}
       </ScrollView>
     )
   }
