@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import { useNavigation, useRoute } from '@react-navigation/native'
 
@@ -73,10 +73,9 @@ export default function Detail() {
           >
             <AntDesign name="minuscircle" size={18} color={quant > 0 ? themes.colors.primary : "#707070"} />
           </TouchableOpacity>
-          <TextInput
-            value={quant.toString()}
-            keyboardType={'numeric'}
-          />
+          <Text>
+            {quant.toString()}
+          </Text>
           <TouchableOpacity
             style={styles.buttonQuant}
             activeOpacity={0.7}
