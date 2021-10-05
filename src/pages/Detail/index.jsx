@@ -31,15 +31,22 @@ export default function Detail() {
     }
   }
 
+  function handleNavigation(item) {
+    navigation.navigate('Carrinho', { ...item })
+    console.log(item)
+  }
+
   useEffect(() => {
     function getGame() {
       const game = route.params
       setGame(game)
-      console.log(route.params)
     }
 
     getGame()
   }, [])
+
+  let sendData = [game, quant]
+
 
   return (
     <View style={styles.container}>
@@ -83,6 +90,7 @@ export default function Detail() {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.7}
+        onPress={() => handleNavigation({ ...sendData })}
       >
         <Text style={styles.buttonText}>ADICIONAR AO CARRINHO</Text>
       </TouchableOpacity>
