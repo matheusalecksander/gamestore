@@ -13,12 +13,16 @@ const Tab = createBottomTabNavigator()
 function Tabs() {
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        showLabel: false,
-        style: {
-          backgroundColor: themes.colors.background,
-      },
-    }}
+      screenOptions={{
+
+          "tabBarShowLabel": false,
+          "tabBarStyle": [
+            {
+              "display": "flex"
+            },
+            null
+          ]
+        }}
     >
       <Tab.Screen
        name="Home"
