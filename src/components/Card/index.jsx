@@ -1,15 +1,26 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+
 import Divider from '../Divider'
 import styles from './style'
 
 export default function Card(props) {
+  const navigation = useNavigation()
+
+  function handleNavigation(item) {
+    navigation.navigate('Detalhes', { ...item })
+  }
+
   return (
-    <>
+    <TouchableOpacity
+      onPress={() => handleNavigation(props)}
+      activeOpacity={0.7}
+    >
       <View style={styles.container}>
         <View style={styles.imageContainer}>
-        <Image
-            source={require(`../../assets/${props.image}`)}
+          <Image
+            source={{ uri: `https://raw.githubusercontent.com/projetos-matheusalecksander/gamestore/main/src/assets/${props.image}` }}
             style={styles.image} />
         </View>
         <View style={styles.description}>
@@ -20,6 +31,6 @@ export default function Card(props) {
         </View>
       </View>
       <Divider />
-    </>
+    </TouchableOpacity>
   )
 }

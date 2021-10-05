@@ -1,10 +1,13 @@
 import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
-  divider: {
+  container: {
+    flex: 1,
+    width: '100%'
+  },
+  content: {
     width: '100%',
-    height: 2,
-    opacity: 0.4
+    height: '50%'
   }
 })
 

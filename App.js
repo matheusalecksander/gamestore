@@ -1,6 +1,9 @@
 import { StatusBar } from 'expo-status-bar'
-import React, { useEffect, useState } from 'react'
-import { StyleSheet, ScrollView } from 'react-native'
+import React from 'react'
+import { StyleSheet } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+
+import Tabs from './src/routes/tabsRoutes'
 
 import AppLoading from 'expo-app-loading'
 import {
@@ -11,9 +14,6 @@ import {
 } from '@expo-google-fonts/rajdhani'
 
 import themes from './src/global/theme'
-import Header from './src/components/Header/'
-import Card from './src/components/Card'
-
 export default function App() {
   let [fontsLoaded] = useFonts({
     Rajdhani_400Regular,
@@ -21,27 +21,13 @@ export default function App() {
     Rajdhani_700Bold
   })
 
-  const games = require('./src/api/products.json')
-
   if (!fontsLoaded) {
     return <AppLoading />
   } else {
     return (
-      <ScrollView style={styles.container}>
-        <StatusBar style="auto" />
-        <Header />
-        {games.map((item, i) => {
-          return (
-            <Card
-              key={i}
-              image={item.image}
-              name={item.name}
-              score={item.score}
-              price={item.price.toString().replace('.', ',')}
-            />
-          )
-        })}
-      </ScrollView>
+      <NavigationContainer style={styles.container}>
+        <Tabs />
+      </NavigationContainer>
     )
   }
 }

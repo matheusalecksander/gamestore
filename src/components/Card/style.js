@@ -5,17 +5,18 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     width: '100%',
-    height: 175,
+    height: 'auto',
     padding: 10,
     alignItems: 'center'
   },
   imageContainer: {
-    width: '35%',
+    width: '36%',
     height: 'auto',
   },
   image: {
     width: 125,
-    height: 125
+    height: 125,
+    resizeMode: 'cover',
   },
   description: {
     width: '65%',
@@ -24,8 +25,10 @@ const styles = StyleSheet.create({
   title: {
     color: '#172022',
     fontFamily: themes.fonts.titleFont,
-    fontSize: 28,
+    fontSize: 24,
     marginLeft: 10,
+    lineHeight: 28
+
   },
   text: {
     color: '#172022',
