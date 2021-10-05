@@ -20,7 +20,7 @@ export default function Home() {
             image={item.image}
             name={item.name}
             score={item.score}
-            price={item.price}
+            price={item.price.toFixed(2).replace('.', ',')}
           />}
         keyExtractor={item => item.id.toString()}
         showsVerticalScrollIndicator={false}
