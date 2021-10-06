@@ -2,7 +2,7 @@
 
 UI de um e-commerce realizada para o teste prático da SuperaTecnologia.
 
-# <><><><><><><><><><><><>
+# <><><><><><><><><><><><><><><>
 
 ### Features
 
@@ -13,4 +13,4 @@ pode adicionar o produto ao carrinho.
 Na página de carrinho é exibido os items selecionados pelo usuário, bem como
 o botão de finalizar compra, que quando clicado exibe um modal e limpa o carrinho.
 
-# <><><><><><><><><><><><>
+# <><><><><><><><><><><><><><><>
