@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 80,
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 5,
+    marginBottom: 5,
   },
   itemContainer:{
     flexDirection: 'row',

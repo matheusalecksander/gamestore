@@ -5,9 +5,9 @@ const themes = {
     textFont: 'Rajdhani_400Regular'
   },
   colors: {
-    background: '#fff',
+    background: '#fefefe',
     primary: '#8256FF',
-    secondary: '#56FFAE'
+    secondary: '#fca030'
   }
 }
 
