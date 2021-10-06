@@ -26,13 +26,13 @@ const styles = StyleSheet.create({
     fontFamily: themes.fonts.titleFont,
     fontSize: 32,
     color: "#172022",
-    marginLeft: '20%'
+    textAlign: 'center'
   },
   text: {
     fontFamily: themes.fonts.textFont,
     fontSize: 18,
     color: "#172022",
-    marginLeft: '20%'
+    textAlign: 'center'
   },
   button: {
     width: '80%',
@@ -49,6 +49,18 @@ const styles = StyleSheet.create({
     fontFamily: themes.fonts.titleFont,
     fontSize: 24,
     color: themes.colors.background
-}})
+  },
+  quantWrapper: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  buttonQuant: {
+    marginLeft: 10,
+    marginRight: 10
+  },
+
+})
 
 export default styles
