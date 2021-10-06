@@ -45,7 +45,10 @@ export default function Detail() {
     getGame()
   }, [])
 
-  let sendData = [game, quant]
+  function handleNavigation(item) {
+    navigation.navigate('Carrinho', { ...item })
+  }
+  let sendData = [{...game}, quant]
 
 
   return (

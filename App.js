@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native'
 
 import Tabs from './src/routes/tabsRoutes'
 
@@ -25,8 +25,8 @@ export default function App() {
     return <AppLoading />
   } else {
     return (
-       <NavigationContainer style={styles.container}>
-         <Tabs />
+      <NavigationContainer style={styles.container}>
+        <Tabs />
       </NavigationContainer>
     )
   }
