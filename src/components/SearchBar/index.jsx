@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput } from 'react-native'
 
-import { FontAwesome } from '@expo/vector-icons'
+import { FontAwesome } from '@expo/vector-icons' 
 
 import styles from './style'
 import Divider from '../Divider'
 
-import themes from '../../global/theme'
+import themes from '../../global/theme'     
 
 export default function SearchBar() {
+  const games = require('../../api/products.json')
+
   return (
     <>
       <View style={styles.container} >

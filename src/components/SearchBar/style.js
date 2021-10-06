@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 import themes from '../../global/theme'
 
 const styles = StyleSheet.create({
-  container: {
+  optionsContainer: {
     paddingVertical: 15,
     paddingHorizontal: 20,
     width: '100%',
