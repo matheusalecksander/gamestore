@@ -11,34 +11,31 @@ export default function Cart() {
   const navigation = useNavigation()
   const route = useRoute()
   
-  const [product, setProduct] = useState([{}])
+  const [product, setProduct] = useState([])
   
   useEffect(() => {
     function getGame() {
       const game = route.params
-      setProduct(game)
+      setProduct([...product, {game}])
       console.log(product.length)
       console.log(product)
     } 
-    function appendGame() {
-      const game = route.params
-      product.push(game)
-    }
-    if(product === undefined){
-      getGame()
-    }else{
-      appendGame()
-    }
-  }, [])
+    getGame()
+  }, [route.params]
+  )
   return (
     <View style={styles.container}>
       <View style={styles.content}>
         <TouchableOpacity
-          onPress={() => console.log(product)}
+          onPress={() => console.log(product.length)}
         >
           <Text>Clique aqui</Text>
         </TouchableOpacity>
-        <Text>lala</Text>
+        {
+          product.length > 1 ?
+          <Text>{product[0].game[0].name}</Text> :
+          <Text>O Carrinho está vazio</Text>
+        }
       </View>
       <Divider />
       <View style={styles.content}>
