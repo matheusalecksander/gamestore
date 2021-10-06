@@ -24,36 +24,37 @@ export default function Cart() {
       setTotal(0)
   }
 
+  function handleFrete() {
+    if (subTotal > 250) {
+      setFrete(0)
+    } else {
+      setFrete(frete + 10)
+    }
+  }
+
+  function handleTotal() {
+    setTotal(subTotal + frete)
+  }
+
   useEffect(() => {
     function getProduct() {
       const newProduct = route.params
       setProduct([...product, { ...newProduct }]) // Adiciona um novo produto ao carrinho
 
-
+      const quantidade = newProduct[1]
       const price = parseFloat(newProduct[0].price.replace(',', '.')) // Formata o preço para calcularmos o valor total da compra
-      setSubTotal(price + subTotal)
-      console.log(`SubTotal: ${subTotal}`)
-
-      setFrete(frete + 10) // Incrementa o valor do frete a cada produto adicionado
-      console.log(`frete: ${frete}`)
-
-    }
-
-    function handleFrete() {
-
-    }
-
-    function handleTotal() {
-      const totalPrice = subTotal + frete
-      setTotal(totalPrice)
+      setSubTotal(price * quantidade + subTotal)
     }
 
     if (route.params != null) {
       getProduct()
+
+      handleFrete()
       handleTotal()
     }
-  }, [route.params]
-  )
+
+  }, [route.params])
+
   return (
     <View style={styles.container}>
       <View style={styles.cartContent}>
@@ -108,13 +109,15 @@ export default function Cart() {
 
               <TouchableOpacity
                 onPress={() => reset()}
+                style={styles.removeButton}
               >
-                <Text>Remover itens do carrinho</Text>
+                <Text style={styles.removeText}>Remover itens do carrinho</Text>
               </TouchableOpacity>
               <TouchableOpacity
+                style={styles.finishButton}
                 onPress={() => reset()}
               >
-                <Text>Finalizar Compra</Text>
+                <Text style={styles.finishText}>Finalizar Compra</Text>
               </TouchableOpacity>
             </View>
             :

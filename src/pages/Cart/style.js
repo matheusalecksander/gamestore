@@ -60,6 +60,28 @@ const styles = StyleSheet.create({
     fontFamily: themes.fonts.titleFont,
     fontSize: 18,
     color: themes.colors.secondary,
+  },
+  removeButton: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#ff0000',
+    padding: 5
+  },
+  removeText: {
+    fontFamily: themes.fonts.titleFont,
+    color: '#ff0000',
+  },
+  finishButton: {
+    paddingVertical: 20,
+    width: '90%',
+    alignItems: 'center',
+    backgroundColor: themes.colors.primary,
+    borderRadius: 50,
+    marginTop: 20
+  },
+  finishText: {
+    fontFamily: themes.fonts.titleFont,
+    color: '#fff',
+    fontSize: 24
   }
 })
 
