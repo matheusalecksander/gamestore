@@ -16,7 +16,7 @@ export default function Home() {
   const [searchText, setSearchText] = useState('')
   const [games, setGames] = useState(products)
   const [options, setOptions] = useState('closed')
-  const [sort, setSort] = useState('score')
+  const [sort, setSort] = useState('')
 
   useEffect(() => {
     if (searchText === '') {
@@ -39,6 +39,7 @@ export default function Home() {
     sortedList.sort((a, b) => (a.name > b.name) ? 1 : (b.name > a.name) ? -1 : 0)
 
     setGames(sortedList)
+    setSort('A-Z')
   }
   function sortByNameZA() {
     let sortedList = [...products]
@@ -46,6 +47,7 @@ export default function Home() {
     sortedList.sort((a, b) => (b.name > a.name) ? 1 : (a.name > b.name) ? -1 : 0)
 
     setGames(sortedList)
+    setSort('Z-A')
   }
   function sortByLowerPrice() {
     let sortedList = [...products]
@@ -53,6 +55,7 @@ export default function Home() {
     sortedList.sort((a, b) => (a.price > b.price) ? 1 : (b.price > a.price) ? -1 : 0)
 
     setGames(sortedList)
+    setSort('LP')
   }
   function sortByHigherPrice() {
     let sortedList = [...products]
@@ -61,6 +64,7 @@ export default function Home() {
 
 
     setGames(sortedList)
+    setSort('HP')
   }
   function sortByScore() {
     let sortedList = [...products]
@@ -69,6 +73,7 @@ export default function Home() {
 
 
     setGames(sortedList)
+    setSort('score')
   }
 
   return (
@@ -117,35 +122,35 @@ export default function Home() {
             </View>
 
             <View style={styles.optionsWrapper}>
-              <TouchableOpacity style={styles.sortOption}
+              <TouchableOpacity style={sort === "A-Z" ? styles.sortOptionSelected : styles.sortOption}
                 onPress={() => sortByNameAZ()}
               >
                 <Text style={styles.optionText}>
                   Nome(A-Z)
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.sortOption}
+              <TouchableOpacity style={sort === "Z-A" ? styles.sortOptionSelected : styles.sortOption}
                 onPress={() => sortByNameZA()}
               >
                 <Text style={styles.optionText}>
                   Nome(Z-A)
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.sortOption}
+              <TouchableOpacity style={sort === "LP" ? styles.sortOptionSelected : styles.sortOption}
                 onPress={() => sortByLowerPrice()}
               >
                 <Text style={styles.optionText}>
                   Menor Preço
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.sortOption}
+              <TouchableOpacity style={sort === "HP" ? styles.sortOptionSelected : styles.sortOption}
                 onPress={() => sortByHigherPrice()}
               >
                 <Text style={styles.optionText}>
                   Maior Preço
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.sortOption}
+              <TouchableOpacity style={sort === "score" ? styles.sortOptionSelected : styles.sortOption}
                 onPress={() => sortByScore()}
               >
                 <Text style={styles.optionText}>

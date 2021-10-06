@@ -70,6 +70,11 @@ const styles = StyleSheet.create({
     backgroundColor: themes.colors.secondary,
     borderRadius: 10,
   },
+  sortOptionSelected: {
+    padding: 4,
+    backgroundColor: themes.colors.primary,
+    borderRadius: 10,
+  },
   optionText: {
     color: themes.colors.background,
     fontFamily: themes.fonts.titleFont,
