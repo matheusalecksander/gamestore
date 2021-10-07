@@ -13,7 +13,7 @@ export default function Cart() {
   const route = useRoute()
 
   const [product, setProduct] = useState([])
-  const [frete, setFrete] = useState(0)
+  const [frete, setFrete] = useState(10)
   const [subTotal, setSubTotal] = useState(0)
   const [total, setTotal] = useState(0)
 
@@ -24,17 +24,6 @@ export default function Cart() {
       setTotal(0)
   }
 
-  function handleFrete() {
-    if (subTotal > 250) {
-      setFrete(0)
-    } else {
-      setFrete(frete + 10)
-    }
-  }
-
-  function handleTotal() {
-    setTotal(subTotal + frete)
-  }
 
   useEffect(() => {
     function getProduct() {
@@ -43,14 +32,26 @@ export default function Cart() {
 
       const quantidade = newProduct[1]
       const price = parseFloat(newProduct[0].price.replace(',', '.')) // Formata o preço para calcularmos o valor total da compra
+      
       setSubTotal(price * quantidade + subTotal)
+      setTotal(price * quantidade + total + frete)
     }
+
+  function handleFrete() {
+    if (subTotal > 250) {
+      setFrete(0)
+    } 
+  }
+
+  function handleTotal() {
+    setTotal(total + frete)
+  }
 
     if (route.params != null) {
       getProduct()
 
       handleFrete()
-      handleTotal()
+      //handleTotal()
     }
 
   }, [route.params])
@@ -115,13 +116,15 @@ export default function Cart() {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.finishButton}
+                activeOpacity={0.7}
                 onPress={() => reset()}
               >
                 <Text style={styles.finishText}>Finalizar Compra</Text>
               </TouchableOpacity>
+
             </View>
             :
-            <Text>Não há itens em seu carrinho, volte as compras</Text>
+            <Text style={styles.alert}>Não há itens em seu carrinho, volte as compras</Text>
 
         }
       </View>
